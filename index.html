@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="jsip">
+	<head>
+		<title>Javascript Image Prototype</title>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/js/bootstrap.min.js"></script>
+		<script src="application.js"></script>
+		<link href="application.css" rel="stylesheet">
+	</head>
+	<body>
+		<div ng-controller="AppCtrl">
+			<tabset>
+				<tab>
+					<tab-heading>
+						<i class="icon-file"></i> Select file
+					</tab-heading>
+					<div class="fileinput fileinput-new" data-provides="fileinput">
+						<span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span>
+							<input type="file" name="..." custom-files="files" custom-file-change="selectFile()">
+						</span>
+						<span class="fileinput-filename"></span>
+						<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none" ng-click="unselectFile()">&times;</a>
+					</div>
+				</tab>
+				<tab disabled="!fileSelected">
+					<tab-heading>
+						<i class="icon-picture"></i> Black and white
+					</tab-heading>
+					I've got an HTML heading, and a select callback. Pretty cool!
+				</tab>
+			</tabset>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+body {
+	padding: 20px;
+}
+.nav, .pagination, .carousel a { cursor: pointer; }
+
+.tab-content {
+	padding-top: 20px;
+}
