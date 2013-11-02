@@ -12,24 +12,29 @@ function fileChangeDirective() {
 	};
 }
 
-
 angular.module('jsip', ['ui.bootstrap']).directive('customFileChange', fileChangeDirective)
 
 var AppCtrl = function($scope) {
+	
+	$scope.urls = {};
+	
 	$scope.selectFile = function() {
 		var f = $scope.files[0];
+		if (!f.type.match('image.*')) {
+			console.log('No image file');
+			return;
+		}
 		var reader = new FileReader();
-		reader.onload = function() {
-			$scope.fileSelected = true; // too late, apply is executed before
+		reader.onload = function(event) {
+			$scope.fileSelected = true;
+			$scope.urls.plain = event.target.result;
+			$scope.$apply();
 		};
 		reader.readAsDataURL(f);
 	};
 
 	$scope.unselectFile = function() {
 		$scope.fileSelected = false;
-	};
-
-	$scope.blackAndWhite = function() {
-
+		$scope.urls = {};
 	};
 };
