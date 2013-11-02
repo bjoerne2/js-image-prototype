@@ -27,9 +27,11 @@
 				</tab>
 				<tab disabled="!fileSelected">
 					<tab-heading>
-						<i class="icon-picture"></i> Data URL
+						<i class="icon-picture"></i> Plain
 					</tab-heading>
-					<textarea>{{urls.plain}}</textarea>
+					<img src="{{urls.plain}}" />
+					<hr />
+					<textarea class="big-textarea" readonly="readonly">{{urls.plain}}</textarea>
 				</tab>
 			</tabset>
 		</div>
