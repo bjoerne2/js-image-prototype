@@ -29,11 +29,36 @@
 					<tab-heading>
 						<i class="icon-picture"></i> Plain
 					</tab-heading>
-					<img src="{{urls.plain}}" />
+					<img ng-src="{{urls.plain}}" />
 					<hr />
 					<textarea class="big-textarea" readonly="readonly">{{urls.plain}}</textarea>
 				</tab>
+				<tab disabled="!fileSelected" select="scale()">
+					<tab-heading>
+						<i class="icon-picture"></i> Scaled
+					</tab-heading>
+					<img ng-src="{{urls.scaled}}" />
+					<hr />
+					<textarea class="big-textarea" readonly="readonly">{{urls.scaled}}</textarea>
+				</tab>
+				<tab disabled="!fileSelected" select="blackAndWhite()">
+					<tab-heading>
+						<i class="icon-picture"></i> Black and White
+					</tab-heading>
+					<img ng-src="{{urls.blackAndWhite}}" />
+					<hr />
+					<textarea class="big-textarea" readonly="readonly">{{urls.blackAndWhite}}</textarea>
+				</tab>
+				<tab disabled="!fileSelected" select="withLove()">
+					<tab-heading>
+						<i class="icon-picture"></i> With Love
+					</tab-heading>
+					<img ng-src="{{urls.withLove}}" />
+					<hr />
+					<textarea class="big-textarea" readonly="readonly">{{urls.withLove}}</textarea>
+				</tab>
 			</tabset>
 		</div>
+		<custom-canvas-factory factory-method="createCanvas"></custom-canvas-factory>
 	</body>
 </html>
